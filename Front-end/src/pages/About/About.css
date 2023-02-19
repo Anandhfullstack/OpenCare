@@ -1,0 +1,28 @@
+.about__title {
+    margin-top: 12rem;
+    letter-spacing: 2.5px;
+}
+
+.about__sections {
+    margin-top: 5rem;
+}
+
+.about__sections section {
+    display: block;
+    min-height: 20vh;
+}
+
+.what-container {
+    height: 50vh;
+}
+
+.what-container h2 {
+    text-align: center;
+    letter-spacing: 2.5px;
+    margin-bottom: 1.5rem;
+}
+
+.what-container p {
+    text-align: center;
+    font-size: 17.5px;
+}
