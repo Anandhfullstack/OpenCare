@@ -5,7 +5,6 @@ import GetThreads from '../../functions/GetThreads';
 
 import User from '../../components/Elements/User';
 import Modal from '../../components/Elements/Modal';
-import Button from '../../components/Elements/Button';
 
 import AddAnswer from './components/AddAnswer';
 import AnswersList from './containers/AnswersList';
