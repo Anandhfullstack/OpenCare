@@ -7,7 +7,6 @@ const About = () => {
         <div>
             <h1 className="center about__title">About Us</h1>
             <hr />
-
             <div className='about__sections'>
               <section className='what-container'>
                 <h2>What is OpenCare?</h2>
@@ -25,8 +24,29 @@ const About = () => {
                 This allows experts to critique others' opinions enabling a more targeted response to ensure the best type of care possible is provided to the patient.<br/>
                 This app could help bridge the gap between patients and medical professionals and provide users with the information they need to manage their health.
                 </p>
-              </section>
-            </div>
+                <h2>FAQ</h2>
+                <div className="faq-accordion">
+                    <div className="faq-question">
+                      Is OpenCare free to use? What does Healthcare include?
+                    </div>
+                    <div className="faq-answer">
+                      Yes! We want to make Healthcare more accessible. That means OpenCare will be open and free for all to use.<br/>Healthcare services include primary care, specialty care, emergency care, hospital care, mental health care, dental care, and other related services.
+                    </div>
+                    <div className="faq-question">
+                      How do we know the answers are reliable?
+                    </div>
+                    <div className="faq-answer">
+                      Most answers on this platform will be anonymous.<br/>However, we ask healthcare professional to login and verify that they are experts. This enables us to mark their answers as "most appropriate" for a given question.
+                  </div>
+                    <div className="faq-question">
+                      How can I find a healthcare providers near me?
+                    </div>
+                    <div className="faq-answer">
+                      You can find healthcare providers by searching online, asking for recommendations from friends or family or visiting a nearby hospital to seek professional advice.
+                    </div>
+                </div>
+             </section>
+           </div>
         </div>
     );
 };
