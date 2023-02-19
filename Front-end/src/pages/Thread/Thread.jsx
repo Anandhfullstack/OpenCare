@@ -56,10 +56,10 @@ const Thread = (props) => {
                 onCancel={closeAnswerModal}
                 header="Add Answer"
                 contentClass="thread-container__modal-content"
+                formClass="add-answer__form"
                 footerClass="thread-container__modal-footer"
-                footer={<Button onClick={closeAnswerModal}>Close</Button>}
             >
-                <AddAnswer />
+                <AddAnswer closeModal={closeAnswerModal} />
             </Modal>
             <div>
                 <div className="thread-container">
