@@ -59,3 +59,16 @@
 .button--big {
     font-size: 1.5rem;
 }
+
+.button--white {
+    background: white;
+    border-color: white;
+    padding: 0.5rem 1rem;
+}
+
+.button--white:hover,
+.button--white:hover {
+    background: rgb(234, 234, 234);
+    border-color: rgb(213, 213, 213);
+    padding: 0.5rem 1rem;
+}

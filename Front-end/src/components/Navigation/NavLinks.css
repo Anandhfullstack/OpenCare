@@ -68,3 +68,21 @@
         border: none;
     }
 }
+
+.user-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0.35rem;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.user-container__img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.user-container__logout {
+    margin-right: 0;
+    margin-left: 1rem;
+}
