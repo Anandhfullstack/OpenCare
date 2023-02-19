@@ -5,7 +5,6 @@ import Input from '../../components/Elements/Input';
 import Card from '../../components/Elements/Card';
 
 import {
-    VALIDATOR_EMAIL,
     VALIDATOR_MINLENGTH,
     VALIDATOR_REQUIRE,
 } from '../../functions/Validators';
@@ -17,11 +16,9 @@ import './Auth.css';
 
 const Auth = () => {
     const auth = useContext(AuthContext);
-    const [isLogin, setIsLogin] = useState(true);
-
-    const [formState, inputHandler, setFormData] = useForm(
+    const [formState, inputHandler] = useForm(
         {
-            email: {
+            name: {
                 value: '',
                 isValid: false,
             },
@@ -33,63 +30,30 @@ const Auth = () => {
         false
     );
 
-    const switchModeHandler = () => {
-        if (!isLogin) {
-            setFormData(
-                {
-                    ...formState.inputs,
-                    name: undefined,
-                },
-                formState.inputs.email.isValid &&
-                    formState.inputs.password.isValid
-            );
-        } else {
-            setFormData(
-                {
-                    ...formState.inputs,
-                    name: {
-                        value: '',
-                        isValid: false,
-                    },
-                },
-                false
-            );
-        }
-        setIsLogin((prevMode) => !prevMode);
-    };
-
     const authSubmitHandler = (event) => {
         event.preventDefault();
         console.log(formState.inputs);
 
-        auth.login();
+        auth.login(
+            formState.inputs.name.value,
+            formState.inputs.password.value
+        );
     };
 
     return (
         <div className="center auth-container">
             <Card className="auth-container__card">
-                <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
+                <h2>Register</h2>
                 <hr />
 
-                <form onSubmit={authSubmitHandler}>
-                    {!isLogin && (
-                        <Input
-                            element="input"
-                            id="name"
-                            type="text"
-                            label="Name"
-                            validators={[VALIDATOR_REQUIRE()]}
-                            errorText="Please enter a valid name"
-                            onInput={inputHandler}
-                        />
-                    )}
+                <form>
                     <Input
                         element="input"
-                        id="email"
-                        type="email"
-                        label="E-mail"
-                        validators={[VALIDATOR_EMAIL]}
-                        errorText="Please enter a valid email address"
+                        id="name"
+                        type="text"
+                        label="Name"
+                        validators={[VALIDATOR_REQUIRE()]}
+                        errorText="Please enter a valid name"
                         onInput={inputHandler}
                     />
                     <Input
@@ -103,19 +67,12 @@ const Auth = () => {
                     />
                     <Button
                         className="auth-container__login-button"
-                        type="submit"
+                        onClick={authSubmitHandler}
                         disabled={!formState.isValid}
                     >
-                        {isLogin ? 'Login' : 'Sign Up'}
+                        Register
                     </Button>
                 </form>
-                <Button
-                    inverse
-                    onClick={switchModeHandler}
-                    className="auth-container__switch-button"
-                >
-                    {isLogin ? 'Sign Up' : 'Login'} Instead
-                </Button>
             </Card>
         </div>
     );

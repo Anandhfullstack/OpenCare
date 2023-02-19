@@ -1,6 +1,10 @@
 import React, { useReducer, useEffect } from 'react';
 
+import Button from './Button';
+
 import { validate } from '../../functions/Validators';
+
+import user from '../../assets/icons/user.png';
 import './Input.css';
 
 const inputReducer = (state, action) => {
@@ -49,8 +53,11 @@ const Input = (props) => {
         });
     };
 
-    const element =
-        props.element === 'input' ? (
+    const chooseFile = () => {};
+
+    let element = null;
+    if (props.element === 'input') {
+        element = (
             <input
                 id={props.id}
                 type={props.type}
@@ -59,7 +66,9 @@ const Input = (props) => {
                 onBlur={touchHandler}
                 value={inputState.value}
             />
-        ) : (
+        );
+    } else {
+        element = (
             <textarea
                 id={props.id}
                 rows={props.rows || 3}
@@ -68,6 +77,7 @@ const Input = (props) => {
                 value={inputState.value}
             />
         );
+    }
 
     return (
         <div

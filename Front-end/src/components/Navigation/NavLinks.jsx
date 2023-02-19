@@ -5,6 +5,7 @@ import { AuthContext } from '../context/auth-context';
 
 import Button from '../Elements/Button';
 
+import user from '../../assets/icons/user.png';
 import './NavLinks.css';
 
 const NavLinks = (props) => {
@@ -35,8 +36,12 @@ const NavLinks = (props) => {
                 </li>
             )}
             {auth.isLoggedIn && (
-                <li>
-                    <Button inverse onClick={auth.logout}>Logout</Button>
+                <li className='user-container'>
+                    <img src={user} alt="pfp" className='user-container__img' />
+                    <p>{auth.user.name}</p>
+                    <Button inverse className='user-container__logout' onClick={auth.logout}>
+                        Logout
+                    </Button>
                 </li>
             )}
         </ul>

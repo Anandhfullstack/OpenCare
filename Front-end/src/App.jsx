@@ -20,12 +20,15 @@ import './App.css';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [user, setUser] = useState(undefined);
 
-    const login = useCallback(() => {
+    const login = useCallback((name, password) => {
+        setUser({ name: name, password: password });
         setIsLoggedIn(true);
     }, []);
 
     const logout = useCallback(() => {
+        setUser(undefined);
         setIsLoggedIn(false);
     }, []);
 
@@ -73,7 +76,12 @@ function App() {
 
     return (
         <AuthContext.Provider
-            value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
+            value={{
+                isLoggedIn: isLoggedIn,
+                user: user,
+                login: login,
+                logout: logout,
+            }}
         >
             <Router>
                 <MainNavigation />
