@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import GetThreads from '../../functions/GetThreads';
 
 import User from '../../components/Elements/User';
+import Modal from '../../components/Elements/Modal';
+import Button from '../../components/Elements/Button';
 
+import AddAnswer from './components/AddAnswer';
 import AnswersList from './containers/AnswersList';
 
 import airplane from '../../assets/icons/airplane.png';
@@ -12,6 +15,11 @@ import addIcon from '../../assets/icons/plus.png';
 import './Thread.css';
 
 const Thread = (props) => {
+    const [showAnswerModal, setShowAnswerModal] = useState(false);
+
+    const openAnswerModal = () => setShowAnswerModal(true);
+    const closeAnswerModal = () => setShowAnswerModal(false);
+
     const threads = GetThreads();
     const { threadId } = useParams();
 
@@ -42,24 +50,41 @@ const Thread = (props) => {
     }
 
     return (
-        <div>
-            <div className="thread-container">
-                <h2 className="thread-container__subject">{thread.subject}</h2>
-                <h3 className="thread-container__description">
-                    {thread.description}
-                </h3>
-                <User
-                    id={thread.creator}
-                    className="thread-container__creator"
-                />
+        <React.Fragment>
+            <Modal
+                show={showAnswerModal}
+                onCancel={closeAnswerModal}
+                header="Add Answer"
+                contentClass="thread-container__modal-content"
+                footerClass="thread-container__modal-footer"
+                footer={<Button onClick={closeAnswerModal}>Close</Button>}
+            >
+                <AddAnswer />
+            </Modal>
+            <div>
+                <div className="thread-container">
+                    <h2 className="thread-container__subject">
+                        {thread.subject}
+                    </h2>
+                    <h3 className="thread-container__description">
+                        {thread.description}
+                    </h3>
+                    <User
+                        id={thread.creator}
+                        className="thread-container__creator"
+                    />
+                </div>
+                <hr />
+                <button
+                    className="thread__add-answer-button"
+                    onClick={openAnswerModal}
+                >
+                    <img src={addIcon} alt="Add" />
+                    <p>Add Answer</p>
+                </button>
+                <AnswersList items={thread.answers} />
             </div>
-            <hr />
-            <button className="thread__add-answer-button">
-                <img src={addIcon} alt="Add" />
-                <p>Add Answer</p>
-            </button>
-            <AnswersList items={thread.answers} />
-        </div>
+        </React.Fragment>
     );
 };
 
