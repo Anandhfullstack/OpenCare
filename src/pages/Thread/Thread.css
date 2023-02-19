@@ -1,0 +1,28 @@
+.thread__not-found {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.thread__not-found h1 {
+    margin-bottom: 1rem;
+    letter-spacing: 10px;
+}
+
+.thread__not-found h4 {
+    letter-spacing: 0.2rem;
+    margin-top: 2rem;
+}
+
+.thread__not-found h3 {
+    letter-spacing: 0.3rem;
+    margin-bottom: 2rem;
+}
+
+.thread__not-found-img {
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+    margin-top: 10rem;
+    opacity: 0.5;
+}
