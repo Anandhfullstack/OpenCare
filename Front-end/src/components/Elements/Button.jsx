@@ -7,10 +7,12 @@ const Button = (props) => {
     if (props.href) {
         return (
             <a
-                className={`${props.className} ${props["data-aos"]} button button--${
-                    props.size || 'default'
-                } ${props.inverse && 'button--inverse'} ${
-                    props.danger && 'button--danger'
+                className={`${props.className} ${
+                    props['data-aos']
+                } button button--${props.size || 'default'} ${
+                    props.inverse && 'button--inverse'
+                } ${props.danger && 'button--danger'} ${
+                    props.white && 'button--white'
                 }`}
                 href={props.href}
             >
@@ -24,10 +26,12 @@ const Button = (props) => {
             <Link
                 to={props.to}
                 exact={props.exact}
-                className={`${props.className} ${props["data-aos"]} button button--${
-                    props.size || 'default'
-                } ${props.inverse && 'button--inverse'} ${
-                    props.danger && 'button--danger'
+                className={`${props.className} ${
+                    props['data-aos']
+                } button button--${props.size || 'default'} ${
+                    props.inverse && 'button--inverse'
+                } ${props.danger && 'button--danger'} ${
+                    props.white && 'button--white'
                 }`}
             >
                 {props.children}
@@ -37,10 +41,12 @@ const Button = (props) => {
 
     return (
         <button
-            className={`${props.className} ${props["data-aos"]} button button--${
-                props.size || 'default'
-            } ${props.inverse && 'button--inverse'} ${
-                props.danger && 'button--danger'
+            className={`${props.className} ${
+                props['data-aos']
+            } button button--${props.size || 'default'} ${
+                props.inverse && 'button--inverse'
+            } ${props.danger && 'button--danger'} ${
+                props.white && 'button--white'
             }`}
             type={props.type}
             onClick={props.onClick}

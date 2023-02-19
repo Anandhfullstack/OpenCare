@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import {
     BrowserRouter as Router,
     Route,
@@ -14,33 +14,72 @@ import QnA from './pages/QnA/QnA';
 import Auth from './pages/Auth/Auth';
 import Thread from './pages/Thread/Thread';
 
+import { AuthContext } from './components/context/auth-context';
+
 import './App.css';
 
 function App() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const login = useCallback(() => {
+        setIsLoggedIn(true);
+    }, []);
+
+    const logout = useCallback(() => {
+        setIsLoggedIn(false);
+    }, []);
+
+    let routes;
+    if (isLoggedIn) {
+        routes = (
+            <Switch>
+                <Route path="/" exact>
+                    <Home />
+                </Route>
+                <Route path="/about" exact>
+                    <About />
+                </Route>
+                <Route path="/threads" exact>
+                    <QnA />
+                </Route>
+                <Route path="/threads/:threadId" exact>
+                    <Thread />
+                </Route>
+                <Redirect to="/" />
+            </Switch>
+        );
+    } else {
+        routes = (
+            <Switch>
+                <Route path="/" exact>
+                    <Home />
+                </Route>
+                <Route path="/about" exact>
+                    <About />
+                </Route>
+                <Route path="/threads" exact>
+                    <QnA />
+                </Route>
+                <Route path="/threads/:threadId" exact>
+                    <Thread />
+                </Route>
+                <Route path="/auth" exact>
+                    <Auth />
+                </Route>
+                <Redirect to="/auth" />
+            </Switch>
+        );
+    }
+
     return (
-        <Router>
-            <MainNavigation />
-            <main>
-                <Switch>
-                    <Route path="/" exact>
-                        <Home />
-                    </Route>
-                    <Route path="/about" exact>
-                        <About />
-                    </Route>
-                    <Route path="/threads" exact>
-                        <QnA />
-                    </Route>
-                    <Route path="/threads/:threadId" exact>
-                        <Thread />
-                    </Route>
-                    <Route path="/auth" exact>
-                        <Auth />
-                    </Route>
-                    <Redirect to="/" />
-                </Switch>
-            </main>
-        </Router>
+        <AuthContext.Provider
+            value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
+        >
+            <Router>
+                <MainNavigation />
+                <main>{routes}</main>
+            </Router>
+        </AuthContext.Provider>
     );
 }
 
