@@ -3,7 +3,12 @@ import { useParams } from 'react-router-dom';
 
 import GetThreads from '../../functions/GetThreads';
 
+import User from '../../components/Elements/User';
+
+import AnswersList from './containers/AnswersList';
+
 import airplane from '../../assets/icons/airplane.png';
+import addIcon from '../../assets/icons/plus.png';
 import './Thread.css';
 
 const Thread = (props) => {
@@ -27,17 +32,35 @@ const Thread = (props) => {
                 <h4 className="center">
                     What a weird thread that we searched up...
                 </h4>
-                <img src={airplane} alt="Airplane" className='thread__not-found-img' />
+                <img
+                    src={airplane}
+                    alt="Airplane"
+                    className="thread__not-found-img"
+                />
             </div>
         );
     }
 
-    return <div>
-        <div className='thread-container'>
-            <h2 className='thread-container__subject'>{thread.subject}</h2>
-            <h3 className='thread-container__description'>{thread.description}</h3>
+    return (
+        <div>
+            <div className="thread-container">
+                <h2 className="thread-container__subject">{thread.subject}</h2>
+                <h3 className="thread-container__description">
+                    {thread.description}
+                </h3>
+                <User
+                    id={thread.creator}
+                    className="thread-container__creator"
+                />
+            </div>
+            <hr />
+            <button className="thread__add-answer-button">
+                <img src={addIcon} alt="Add" />
+                <p>Add Answer</p>
+            </button>
+            <AnswersList items={thread.answers} />
         </div>
-    </div>;
+    );
 };
 
 export default Thread;

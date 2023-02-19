@@ -9,7 +9,7 @@ const ThreadsList = (props) => {
         return (
             <div className="threads-list__not-found center">
                 <h2>No threads found</h2>
-                <h3>Maybe you should create a thread!</h3>
+                <h3>Maybe you should create a thread?</h3>
             </div>
         );
     }
