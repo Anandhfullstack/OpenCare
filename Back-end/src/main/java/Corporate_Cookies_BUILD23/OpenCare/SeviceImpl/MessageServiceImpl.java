@@ -15,8 +15,9 @@ public class MessageServiceImpl implements MessageService {
     private MessageRepository messageRepository;
     private ThreadsRepository threadsRepository;
 
-    public MessageServiceImpl(MessageRepository MessageRepository) {
+    public MessageServiceImpl(MessageRepository MessageRepository, ThreadsRepository threadsRepository) {
         this.messageRepository = MessageRepository;
+        this.threadsRepository= threadsRepository;
     }
 
     @Override
