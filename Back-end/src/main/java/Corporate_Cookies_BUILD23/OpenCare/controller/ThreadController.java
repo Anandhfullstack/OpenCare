@@ -4,6 +4,7 @@ package Corporate_Cookies_BUILD23.OpenCare.controller;
 import Corporate_Cookies_BUILD23.OpenCare.Service.MessageService;
 import Corporate_Cookies_BUILD23.OpenCare.Service.ThreadsService;
 import Corporate_Cookies_BUILD23.OpenCare.model.Message;
+import Corporate_Cookies_BUILD23.OpenCare.model.MessageRequest;
 import Corporate_Cookies_BUILD23.OpenCare.model.Status;
 import Corporate_Cookies_BUILD23.OpenCare.model.Threads;
 import com.mysql.cj.Messages;
@@ -23,7 +24,11 @@ public class ThreadController {
 
     public ThreadController(ThreadsService threadsService) {
         this.threadsService = threadsService;
+
     }
+
+
+
 
     //Add New Thread
     @PostMapping("/add")
@@ -48,5 +53,6 @@ public class ThreadController {
     public ResponseEntity<Messages> getMessagesByThreads(@PathVariable("id") long id){
         return new ResponseEntity<Messages>((Messages) messageService.getMessagesByThreads(id),HttpStatus.OK);
     }
+
 
 }

@@ -1,5 +1,6 @@
 package Corporate_Cookies_BUILD23.OpenCare.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -33,6 +34,7 @@ public class Message {
 
     private Status status;
 
+    @JsonIgnoreProperties("messages")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "threads_id")
     private Threads threads;
@@ -46,6 +48,8 @@ public class Message {
         this.threads = threads;
     }
 
+
     public Message() {
+
     }
 }
