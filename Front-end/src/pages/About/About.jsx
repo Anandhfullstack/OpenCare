@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 import './About.css';
 
 const About = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
-  };
     return (
         <div>
             <h1 className="center about__title">About Us</h1>
@@ -31,39 +26,24 @@ const About = () => {
                 </p>
                 <h2>FAQ</h2>
                 <div className="faq-accordion">
-                  <div className="faq-item">
-                    <button className="faq-question" onClick={toggleAccordion}>
+                    <div className="faq-question">
                       Is OpenCare free to use? What does Healthcare include?
-                      <i className={`fa ${isOpen ? 'fa-minus' : 'fa-plus'}`} />
-                    </button>
-                    {isOpen && (
+                    </div>
                     <div className="faq-answer">
                       Yes! We want to make Healthcare more accessible. That means OpenCare will be open and free for all to use.<br/>Healthcare services include primary care, specialty care, emergency care, hospital care, mental health care, dental care, and other related services.
                     </div>
-                    )}
-                  </div>
-                  <div className="faq-item">
-                    <button className="faq-question" onClick={toggleAccordion}>
+                    <div className="faq-question">
                       How do we know the answers are reliable?
-                      <i className={`fa ${isOpen ? 'fa-minus' : 'fa-plus'}`} />
-                    </button>
-                    {isOpen && (
+                    </div>
                     <div className="faq-answer">
                       Most answers on this platform will be anonymous.<br/>However, we ask healthcare professional to login and verify that they are experts. This enables us to mark their answers as "most appropriate" for a given question.
-                    </div>
-                    )}
                   </div>
-                  <div className="faq-item">
-                    <button className="faq-question" onClick={toggleAccordion}>
+                    <div className="faq-question">
                       How can I find a healthcare providers near me?
-                      <i className={`fa ${isOpen ? 'fa-minus' : 'fa-plus'}`} />
-                    </button>
-                    {isOpen && (
+                    </div>
                     <div className="faq-answer">
                       You can find healthcare providers by searching online, asking for recommendations from friends or family or visiting a nearby hospital to seek professional advice.
                     </div>
-                    )}
-                  </div>
                 </div>
              </section>
            </div>

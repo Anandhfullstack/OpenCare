@@ -36,11 +36,7 @@
     width: 50%;
     padding-bottom: 100px;
 }
-  
-.faq-item {
-    margin-bottom: 20px;
-}
-  
+ 
 .faq-question {
     background-color: #272727;
     border: none;
@@ -66,4 +62,5 @@
     margin-top: -1px;
     padding: 10px;
     width: 100%;
+    margin-bottom: 30px;
 }
