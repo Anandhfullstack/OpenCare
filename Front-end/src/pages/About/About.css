@@ -27,3 +27,40 @@
     font-size: 17.5px;
     padding-bottom: 100px;
 }
+
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+}
+  
+.faq-item {
+    margin-bottom: 20px;
+}
+  
+.faq-question {
+    background-color: #272727;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+  
+.faq-question:hover {
+    background-color: #ff0055;
+}
+  
+.faq-answer {
+    background-color: #272727;
+    border: none;
+    border-top: 1px solid #fff;
+    color: #333;
+    margin-top: -1px;
+    padding: 10px;
+    width: 100%;
+}
