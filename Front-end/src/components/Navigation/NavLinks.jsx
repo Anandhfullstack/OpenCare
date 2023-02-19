@@ -36,10 +36,10 @@ const NavLinks = (props) => {
                 </li>
             )}
             {auth.isLoggedIn && (
-                <li className='user-container'>
-                    <img src={user} alt="pfp" className='user-container__img' />
+                <li className='navlink__user-container'>
+                    <img src={user} alt="pfp" />
                     <p>{auth.user.name}</p>
-                    <Button inverse className='user-container__logout' onClick={auth.logout}>
+                    <Button inverse className='navlink__user-container__logout' onClick={auth.logout}>
                         Logout
                     </Button>
                 </li>
