@@ -60,6 +60,9 @@ And then
 mvn spring-boot:run
 ```
 
+### Demo
+[<img src="demo.gif" width="100%"/>](https://github.com/mhzaman-cs/OpenCare)
+
 
 ## Built With
 
