@@ -1,4 +1,5 @@
 # OpenCare
+
 In many parts of the world, healthcare inaccessibility is a significant problem, especially for marginalized communities such as low-income individuals, ethnic minorities, and those living in rural areas.
 
 There are various reasons why healthcare can be inaccessible to some people. Some of the most common reasons include:
@@ -24,12 +25,51 @@ The Q&A feature could also include a search function that allows users to look u
 
 In addition to the Q&A feature, this app also has an upvote and downvote feature allowing expert professionals to be able to critique others' opinions allowing for a more targeted response to ensure the best type of care possible is provided to the patient. This app could help bridge the gap between patients and medical professionals and provide users with the information they need to manage their health.
 
-## How to run the project?
-→ Clone the Main branch on your local machine.  
-→ Navigate to the Front-End directory in the terminal.  
-→ Run:  
->npm install  
->npm run dev  
 
-→ Follow the localhost link displayed in the terminal :)
-  
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+- Install Java from [Oracle's website](https://www.oracle.com/ca-en/java/technologies/downloads/)
+- Install XAMPP from [Apache Friends](https://www.apachefriends.org/download.html)
+
+### Installing
+
+Start off by going into the Front-end folder running
+```
+npm install
+```
+
+And then
+
+```
+npm run dev
+```
+
+And then, go into the Back-end folder and run
+
+```
+mvn install
+```
+
+And then
+
+```
+mvn spring-boot:run
+```
+
+
+## Built With
+
+* [Spring Boot](https://spring.io/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [MYSQL](https://www.mysql.com/) - The database used
+* [XAMPP](https://www.apachefriends.org/)
+
+#
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
