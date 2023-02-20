@@ -23,3 +23,13 @@ The app has a user-friendly interface that makes it easy for users to navigate a
 The Q&A feature could also include a search function that allows users to look up previously asked questions and answers. This could be particularly helpful for people who have common medical conditions and want to learn more about managing their symptoms.
 
 In addition to the Q&A feature, this app also has an upvote and downvote feature allowing expert professionals to be able to critique others' opinions allowing for a more targeted response to ensure the best type of care possible is provided to the patient. This app could help bridge the gap between patients and medical professionals and provide users with the information they need to manage their health.
+
+## How to run the project?
+→ Clone the Main branch on your local machine.  
+→ Navigate to the Front-End directory in the terminal.  
+→ Run:  
+>npm install  
+>npm run dev  
+
+→ Follow the localhost link displayed in the terminal :)
+  
