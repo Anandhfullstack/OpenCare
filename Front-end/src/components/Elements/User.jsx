@@ -1,28 +1,13 @@
 import React from 'react';
 
-import GetUsers from '../../functions/GetUsers';
-
+import user from '../../assets/icons/user.png'
 import './User.css';
 
 const User = (props) => {
-    const users = GetUsers();
-
-    let user = null;
-    for (let index = 0; index < users.length; index++) {
-        const element = users[index];
-        if (element.id === props.id) {
-            user = element;
-        }
-    }
-
-    if (user === null) {
-        return <div>User don't exist</div>;
-    }
-
     return (
         <div className={'user-container ' + props.className}>
-            <img src={user.profilePicture} alt={user.id} />
-            <p>{user.name}</p>
+            <img src={user} alt={props.id} />
+            <p>{props.id}</p>
         </div>
     );
 };
