@@ -1,5 +1,7 @@
 # OpenCare
 
+Link to Youtube presentation: [OpenCare BUILD'23 Presentation](https://www.youtube.com/watch?v=PR4RQntSviE) 
+
 In many parts of the world, healthcare inaccessibility is a significant problem, especially for marginalized communities such as low-income individuals, ethnic minorities, and those living in rural areas.
 
 There are various reasons why healthcare can be inaccessible to some people. Some of the most common reasons include:
