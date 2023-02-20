@@ -30,3 +30,4 @@ In addition to the Q&A feature, this app also has an upvote and downvote feature
 → Run: 
 >npm install  
 >npm run dev  
+→ Follow the local host link displayed in the terminal :)
