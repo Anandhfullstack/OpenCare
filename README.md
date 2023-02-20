@@ -27,7 +27,9 @@ In addition to the Q&A feature, this app also has an upvote and downvote feature
 ## How to run the project?
 → Clone the Main branch on your local machine.  
 → Navigate to the Front-End directory in the terminal.  
-→ Run: 
+→ Run:  
 >npm install  
 >npm run dev  
-→ Follow the local host link displayed in the terminal :)
+
+→ Follow the localhost link displayed in the terminal :)
+  
